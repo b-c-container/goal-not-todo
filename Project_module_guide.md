@@ -1,0 +1,200 @@
+## [lib](lib)
+- [common](lib%2Fcommon)
+  - [constant](lib%2Fcommon%2Fconstant)
+    - [app_colors.dart](lib%2Fcommon%2Fconstant%2Fapp_colors.dart)
+      - app에서 사용하는 static 컬러 모음
+      - 해당 파일에 ***공통 컬러 추가 요망***
+  - [dart](lib%2Fcommon%2Fdart)
+    - [collection](lib%2Fcommon%2Fdart%2Fcollection)
+      - [sort_functions.dart](lib%2Fcommon%2Fdart%2Fcollection%2Fsort_functions.dart) 
+        - List 등 Collection 객체 Sort // TODO 추후 정확한 분석 필요
+    - [extension](lib%2Fcommon%2Fdart%2Fextension)
+      - [animation_controller_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fanimation_controller_extension.dart)
+        - animation Controller 에 기능 추가 
+        - TODO 테스트 필요
+      - [collection_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fcollection_extension.dart)
+        - Collection 객체들에 기능 추가
+        - List.swap : List 안의 두개의 객체 위치 변경
+        - List.toStream : List를 스트림으로 반환
+      - [color_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fcolor_extension.dart)
+        - Color 객체에 기능 추가
+        - Color.getSwatchByBrightness : 테마에 따른 밝기 반전
+        - Color.swatchShade : shade 변경
+      - [context_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fcontext_extension.dart)
+        - BuildContext 객체에 기능 추가
+        - width : widthSize 에 디바이스 width를 곱한 값
+        - height : heightSize 에 디바이스 height를 곱한 값
+        - deviceWidth : 디바이스 width
+        - deviceHeight : 디바이스 height
+        - deviceOrientation : 디바이스 방향
+        - statusBarHeight : Status bar 높이
+        - viewPaddingBottom : bottom padding
+        - platformBrightness : 현재 밝기
+        - appColors : 현재 테마의 컬러들
+        - appShadows : 현재 테마의 shadow
+        - themeType : 현재 테마
+        - changeTheme : 테마 변경 메소드
+      - [datetime_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fdatetime_extension.dart)
+        - DateTime 객체에 기능 추가
+        - formattedDate : dd/MM/yyyy 형식으로 반환
+        - formattedTime : HH:mm 형식으로 반환
+        - formattedDateTime : dd/MM/yyyy HH:mm 형식으로 반환
+      - [num_duration_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fnum_duration_extension.dart)
+        - num 객체에 Duration 반환 기능 추가
+        - microseconds, ms ... 등 해당 값을 실핸한 기능 명의 시간으로 Duration 객체 반환
+      - [num_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fnum_extension.dart)
+        - int 또는 Double 객체에 기능 추가
+        - int.safeParse : int로 파싱시 널체크
+        - int/double.toComma : 숫자에 콤마 추가
+        - int.withPlusMinus : +, - 붙여서 String 표현
+      - [snackbar_context_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fsnackbar_context_extension.dart)
+        - BuildContext에 snackbar 기능 추가
+        - showSnackbar : message를 기반으로 스낵바 생성
+        - showErrorSnackbar : message를 기반으로 에러 스낵바 생성
+      - [velocityx_extension.dart](lib%2Fcommon%2Fdart%2Fextension%2Fvelocityx_extension.dart)
+        - velocity x textBuilder에 기능 추가
+        - VxTextBuilder/VxSelectableTextBuilder.makeWithDefaultFont : 기본 폰트로 텍스트 빌드
+      - [kotlin_style](lib%2Fcommon%2Fdart%2Fkotlin_style)
+        - // TODO 이해불가... 나중에 확인.
+  - [data](lib%2Fcommon%2Fdata)
+    - [preference](lib%2Fcommon%2Fdata%2Fpreference)
+      - [item](lib%2Fcommon%2Fdata%2Fpreference%2Fitem)
+        - [nullable_preference_item.dart](lib%2Fcommon%2Fdata%2Fpreference%2Fitem%2Fnullable_preference_item.dart)
+          - PreferenceItem의 nullAble 객체 자세한건 다음 파일
+        - [preference_item.dart](lib%2Fcommon%2Fdata%2Fpreference%2Fitem%2Fpreference_item.dart)
+          - 로컬에 데이터 저장. 웹의 로컬 스트리지랑 비슷. key, value로 생성
+          - call : setValue를 실행만 함.
+          - set : 데이터 셋
+          - get : 데이터 겟
+          - delete : 데이터 삭제
+        - [rx_preference_item.dart](lib%2Fcommon%2Fdata%2Fpreference%2Fitem%2Frx_preference_item.dart)
+          - getX 적용된 preference item
+        - [rxn_preference_item.dart](lib%2Fcommon%2Fdata%2Fpreference%2Fitem%2Frxn_preference_item.dart)
+          - getX 적용된 nullable preference item
+        - [app_preferences.dart](lib%2Fcommon%2Fdata%2Fpreference%2Fapp_preferences.dart)
+          - 로컬 스토리지 사용 간소화 클래스. PreferenceItem과 사용 해야함.
+        - [prefs.dart](lib%2Fcommon%2Fdata%2Fpreference%2Fprefs.dart)
+          - nullable_preference_item 등의 아이템을 static으로 관리
+  - [language](lib%2Fcommon%2Flanguage)
+    - [language.dart](lib%2Fcommon%2Flanguage%2Flanguage.dart)
+      - 언어 관리 enum. currentLanguage로 현재 언어 찾을 수 있음
+  - [theme](lib%2Fcommon%2Ftheme)
+    - [color](lib%2Fcommon%2Ftheme%2Fcolor)
+      - [abs_theme_colors.dart](lib%2Fcommon%2Ftheme%2Fcolor%2Fabs_theme_colors.dart)
+        - abstract 기본 컬러. 테마 미지정 시 해당 컬러로 지정 됨
+      - [dark_app_colors.dart](lib%2Fcommon%2Ftheme%2Fcolor%2Fdark_app_colors.dart)
+        - abs_theme_colors를 상속받은 dark 테마 컬러
+      - [light_app_colors.dart](lib%2Fcommon%2Ftheme%2Fcolor%2Flight_app_colors.dart)
+        - abs_theme_colors를 상속받은 light 테마 컬러. abstract의 기본 컬러를 사용
+    - [shadows](lib%2Fcommon%2Ftheme%2Fshadows)
+      - [abs_theme_shadows.dart](lib%2Fcommon%2Ftheme%2Fshadows%2Fabs_theme_shadows.dart)
+        - abstract 기본 섀도우. 테마 미지정 시 해당 섀도우로 지정 됨
+      - [dart_app_shadows.dart](lib%2Fcommon%2Ftheme%2Fshadows%2Fdart_app_shadows.dart)
+        - abs_theme_shadows를 상속받은 dark 테마 섀도우
+      - [light_app_shadows.dart](lib%2Fcommon%2Ftheme%2Fshadows%2Flight_app_shadows.dart)
+        - abs_theme_shadows를 상속받은 light 테마 섀도우
+    - [custom_google_font.dart](lib%2Fcommon%2Ftheme%2Fcustom_google_font.dart)
+      - 구글 Diphylleia 폰트 관련 설정
+    - [custom_theme.dart](lib%2Fcommon%2Ftheme%2Fcustom_theme.dart)
+      - dark, light 테마 설정
+    - [custom_theme_app.dart](lib%2Fcommon%2Ftheme%2Fcustom_theme_app.dart)
+      - app 테마 설정
+    - [custom_theme_holder.dart](lib%2Fcommon%2Ftheme%2Fcustom_theme_holder.dart)
+      - // TODO 재확인 필요. 아직 모르겠음
+    - [theme_util.dart](lib%2Fcommon%2Ftheme%2Ftheme_util.dart)
+      - 테마 변경을 위한 util
+  - [util](lib%2Fcommon%2Futil)
+    - [async](lib%2Fcommon%2Futil%2Fasync)
+      - [cli_async.dart](lib%2Fcommon%2Futil%2Fasync%2Fcli_async.dart)
+        - async시 delay를 줌.
+        - delayTimer : duration 만큼 지연 하는 Timer 리턴
+        - sleepAsync : duration 만큼 async 지연
+        - sleepUntil : predict의 bool 함수를 통해 sleepAsync를 while 시킴
+        - DelayTarget : 위의 함수를 활용하기 위함 class로 확인됨
+      - [flutter_async.dart](lib%2Fcommon%2Futil%2Fasync%2Fflutter_async.dart)
+        - Object(최상위 객체??)에 기능 추가
+        - delay : duration 만큼 객체 리턴.
+        - runOnUI : //TODO 확인 필요
+    - [app_keyboard_util.dart](lib%2Fcommon%2Futil%2Fapp_keyboard_util.dart)
+      - 키보드 show, hide 할 수 있는 유틸
+      - KeyboardDetector mixin : 키보드 열려는지 안열렸는지 확인 할 수 있는 mixin
+    - [cached_random_color.dart](lib%2Fcommon%2Futil%2Fcached_random_color.dart)
+      - 특정키로 캐싱된 랜덤 컬러 가져올 수 있는 static 클래스
+    - [local_json.dart](lib%2Fcommon%2Futil%2Flocal_json.dart)
+      - json 쉽게 가져올 수 있는 util성 static 클래스
+  - [widget](lib%2Fcommon%2Fwidget)
+    - [mixin](lib%2Fcommon%2Fwidget%2Fmixin)
+      - [wm_refresh_every_second.dart](lib%2Fcommon%2Fwidget%2Fmixin%2Fwm_refresh_every_second.dart)
+        - 매초 마다 새로고침 하는 로직(startTimer). setState 활용 함.
+    - [scaffold](lib%2Fcommon%2Fwidget%2Fscaffold)
+      - [bottom_dialog_scaffold.dart](lib%2Fcommon%2Fwidget%2Fscaffold%2Fbottom_dialog_scaffold.dart)
+        - bottom dialogue // TODO 사용 해봐야함
+      - [center_dialog_scaffold.dart](lib%2Fcommon%2Fwidget%2Fscaffold%2Fcenter_dialog_scaffold.dart)
+      - [transparent_scaffold.dart](lib%2Fcommon%2Fwidget%2Fscaffold%2Ftransparent_scaffold.dart)
+    - [round_button_theme.dart](lib%2Fcommon%2Fwidget%2Fround_button_theme.dart)
+      - round_button enum
+    - [theme_text_badge.dart](lib%2Fcommon%2Fwidget%2Ftheme_text_badge.dart)
+      - TextBadgeTheme (테마만 있음)
+    - [w_arrow.dart](lib%2Fcommon%2Fwidget%2Fw_arrow.dart)
+      - 기본 화살표 > < 
+    - [w_empty_expanded.dart](lib%2Fcommon%2Fwidget%2Fw_empty_expanded.dart)
+      - 빈 exapnded 가운데에 빈 공간 두기에 좋음
+    - [w_height_and_width.dart](lib%2Fcommon%2Fwidget%2Fw_height_and_width.dart)
+      - 고정 Height, Width 위젯
+    - [w_line.dart](lib%2Fcommon%2Fwidget%2Fw_line.dart)
+      - 높이 1의 container 기반 line
+    - [w_menu_button.dart](lib%2Fcommon%2Fwidget%2Fw_menu_button.dart)
+      - 햄버거 메뉴 버튼. 왼쪽 drawer 열림 클릭시
+    - [w_mode_switch.dart](lib%2Fcommon%2Fwidget%2Fw_mode_switch.dart)
+      - 테마 전환 버튼
+    - [w_round_button.dart](lib%2Fcommon%2Fwidget%2Fw_round_button.dart)
+      - round button
+    - [w_tap.dart](lib%2Fcommon%2Fwidget%2Fw_tap.dart)
+      - 마우스 영역 기반으로 tap 구현 위젯
+    - [w_text_badge.dart](lib%2Fcommon%2Fwidget%2Fw_text_badge.dart)
+      - text badge // 사용해볼 필요 있음
+    - [w_text_field_with_delete.dart](lib%2Fcommon%2Fwidget%2Fw_text_field_with_delete.dart)
+      - 삭제 가능한 텍스트 필드
+  - [cli_common.dart](lib%2Fcommon%2Fcli_common.dart)
+    - collection, cli, num duration 모아노음 common
+  - [common.dart](lib%2Fcommon%2Fcommon.dart)
+    - 기타 자주 사용 하는 위젯 익스텐션 등의 모음
+  - [constants.dart](lib%2Fcommon%2Fconstants.dart)
+    - 상수 모음 basePath, 테마 컬러, 테마 섀도우 등
+- [data](lib%2Fdata)
+  - [local](lib%2Fdata%2Flocal)
+    - [local_db_error.dart](lib%2Fdata%2Flocal%2Ferror%2Flocal_db_error.dart)
+      - 로컬 db 에러 vo
+    - [local_db_error_type.dart](lib%2Fdata%2Flocal%2Ferror%2Flocal_db_error_type.dart)
+      - 에러 타입 enum
+  - [network](lib%2Fdata%2Fnetwork)
+    - [result](lib%2Fdata%2Fnetwork%2Fresult)
+      - [api_error.dart](lib%2Fdata%2Fnetwork%2Fresult%2Fapi_error.dart)
+        - api error class
+    - [simple_result.dart](lib%2Fdata%2Fsimple_result.dart)
+      - simple data result
+- [screen](lib%2Fscreen)
+  - [dialog](lib%2Fscreen%2Fdialog)
+    - [d_color_bottom.dart](lib%2Fscreen%2Fdialog%2Fd_color_bottom.dart)
+      - dialouge bottom 
+    - [d_confirm.dart](lib%2Fscreen%2Fdialog%2Fd_confirm.dart)
+      - 일반 confirm
+    - [d_message.dart](lib%2Fscreen%2Fdialog%2Fd_message.dart)
+      - alert라 생각해도 될 듯
+  - [main](lib%2Fscreen%2Fmain)
+    - [tab](lib%2Fscreen%2Fmain%2Ftab)
+      - [favorite](lib%2Fscreen%2Fmain%2Ftab%2Ffavorite)
+        - [f_favorite.dart](lib%2Fscreen%2Fmain%2Ftab%2Ffavorite%2Ff_favorite.dart)
+          - 즐겨찾기?? 확인 필요
+      - [home](lib%2Fscreen%2Fmain%2Ftab%2Fhome)
+        - [f_home.dart](lib%2Fscreen%2Fmain%2Ftab%2Fhome%2Ff_home.dart)
+      - [tab_item.dart](lib%2Fscreen%2Fmain%2Ftab%2Ftab_item.dart)
+      - [tab_navigator.dart](lib%2Fscreen%2Fmain%2Ftab%2Ftab_navigator.dart)
+    - [s_main.dart](lib%2Fscreen%2Fmain%2Fs_main.dart)
+    - [w_menu_drawer.dart](lib%2Fscreen%2Fmain%2Fw_menu_drawer.dart)
+  - [opensource](lib%2Fscreen%2Fopensource)
+    - [s_opensource.dart](lib%2Fscreen%2Fopensource%2Fs_opensource.dart)
+    - [vo_package.dart](lib%2Fscreen%2Fopensource%2Fvo_package.dart)
+    - [vo_package.freezed.dart](lib%2Fscreen%2Fopensource%2Fvo_package.freezed.dart)
+    - [vo_package.g.dart](lib%2Fscreen%2Fopensource%2Fvo_package.g.dart)
+    - [w_opensource_item.dart](lib%2Fscreen%2Fopensource%2Fw_opensource_item.dart)
